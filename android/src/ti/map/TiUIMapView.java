@@ -587,7 +587,11 @@ public class TiUIMapView extends TiUIFragment
 		}
 		if (timarker != null) {
 			timarkers.remove(timarker);
-			timarker.getMarker().remove();
+
+			if (timarker.getMarker() != null) {
+				timarker.getMarker().remove();
+			}
+
 			timarker.release();
 		}
 	}
